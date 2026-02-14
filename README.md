@@ -1,59 +1,27 @@
 # Votifier-Logger
 Advanced Vote Logging &amp; Administrator Notification Plugin for Minecraft Servers
 
-Markdown
 # Votifier-Logger
 
-[![Platform](https://img.shields.io/badge/Platform-Spigot%20%7C%20Paper-gold.svg)](https://papermc.io/)
-[![Version](https://img.shields.io/badge/Version-1.21.4-blue.svg)](https://www.minecraft.net/)
+A lightweight Minecraft plugin for logging NuVotifier votes and notifying administrators.
 
-**Votifier-Logger** は、Minecraftサーバーへの投票（NuVotifier経由）を詳細に記録し、管理者にリアルタイムで通知するための軽量プラグインです。
+## 🌟 Features
+- **Logging**: Detailed vote data saved to `vote.log`.
+- **Notification**: Real-time alerts for online staff with `votifierlistener.admin` permission.
+- **Customizable**: Change log formats and date styles via `config.yml`.
 
----
-
-## 🌟 主な機能
-
-- **📊 詳細なロギング**: ユーザー名、日時、投票サービス名、IPアドレスを `vote.log` に自動保存。
-- **🔔 管理者通知**: 投票が行われた際、権限を持つプレイヤー（`votifierlistener.admin`）にチャットで通知。
-- **⚙️ 柔軟なカスタマイズ**: `config.yml` からログフォーマットや日付形式を自由に変更可能。
-- **⚡ 非同期処理**: サーバーのメインスレッドに負荷をかけない設計。
-
-## 🛠 対応環境
-
-- **Software**: Spigot / Paper 1.21.x 以上
-- **Dependency**: [NuVotifier](https://www.spigotmc.org/resources/nuvotifier.13449/) (必須)
-
-## 📦 インストール方法
-
-1. [Releases](../../releases) から最新の `.jar` をダウンロード。
-2. サーバーの `plugins` フォルダに配置。
-3. サーバーを起動し、生成された `config.yml` を編集。
-4. `/gmsreload` (またはサーバー再起動) で設定を反映。
-
-## ⚙️ 設定ファイル (config.yml)
-
+## ⚙️ Configuration
 ```yaml
-# 日付の表示形式
 date-format: "yyyy-MM-dd HH:mm:ss"
-
-# ログファイルへの書き出し形式
 log-format: "[%time%] %player% - %service% (IP: %ip%)"
-
-# 保存するファイル名
 log-file-name: "vote.log"
-
-# コンソールに記録を表示するか
 console-log: true
-
-# 管理者(権限保持者)へのチャット通知
 notify-admins: true
 ```
+📝 License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-📝 ライセンス
-このプロジェクトは MIT License の下で公開されています。
-
-Developed by tash087
-
+Copyright (c) 2026 tash087
 
 ---
 プラグインの詳細仕様説明
