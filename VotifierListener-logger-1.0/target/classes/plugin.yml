@@ -1,0 +1,6 @@
+name: Votifier-logger
+version: 1.0.0
+main: jp.tash087.votifierlistener.VotifierListener
+author: tash087
+api-version: '1.21'
+depend: [Votifier]
