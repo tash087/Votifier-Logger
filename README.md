@@ -56,9 +56,7 @@ Developed by tash087
 
 
 ---
-
-### 3. GitHub Wiki / Documentation 用の説明文
-プラグインの詳細な仕様を説明する場合に使います。
+プラグインの詳細仕様説明
 
 ```text
 ## 技術仕様 (Technical Overview)
