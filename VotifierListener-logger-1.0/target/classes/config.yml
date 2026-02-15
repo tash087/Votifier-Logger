@@ -1,0 +1,16 @@
+# ==========================================
+# VotifierListener Config by tash087
+# ==========================================
+
+# ログファイルの名称
+log-file-name: "vote.log"
+
+# ログの記録形式
+# 利用可能変数: %time%, %player%, %service%, %ip%
+log-format: "[%time%] PLAYER: %player% | SERVICE: %service% | IP: %ip%"
+
+# コンソールにもログを表示するか
+console-log: true
+
+# 日付の表示形式
+date-format: "yyyy-MM-dd HH:mm:ss"
