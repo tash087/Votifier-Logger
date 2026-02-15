@@ -4,59 +4,71 @@
 [![Platform](https://img.shields.io/badge/Platform-Spigot%20%7C%20Paper-gold.svg)](https://papermc.io/)
 [![Minecraft Version](https://img.shields.io/badge/Minecraft-1.21.4-blue.svg)](https://www.minecraft.net/)
 
-**Votifier-Logger** は、Minecraftサーバーへの投票（NuVotifier経由）を詳細に記録し、管理業務を効率化するための軽量なプラグインです。
+**Votifier-Logger** is a lightweight plugin designed to streamline server management by providing detailed logging for Minecraft server votes via NuVotifier.
 
 ---
 
-## 🌟 主な機能 (Features)
+## 🌟 Features
 
-- **📊 詳細なロギング**: ユーザー名、日時、投票サービス名、IPアドレスを `vote.log` に自動保存。
-- **⚙️ 柔軟なカスタマイズ**: `config.yml` からログフォーマットや日付形式を自由に変更可能。
-- **💻 コンソール連携**: 投票の受理をリアルタイムでサーバーコンソールに表示。
-- **⚡ 高いパフォーマンス**: 効率的なI/O処理により、サーバーのメインスレッドに負荷をかけません。
+- **📊 Detailed Logging**: Automatically saves usernames, timestamps, voting service names, and IP addresses to `vote.log`.
+- **⚙️ Flexible Customization**: Easily modify log formats and date styles directly through `config.yml`.
+- **💻 Console Integration**: Real-time display of vote processing in the server console.
+- **⚡ Optimized Performance**: Efficient I/O processing ensures minimal impact on the server's main thread.
 
-## 🛠 対応環境 (Requirement)
+## 🛠 Requirements
 
-- **Software**: Spigot / Paper 1.21.x 以上
-- **Dependency**: [NuVotifier](https://www.spigotmc.org/resources/nuvotifier.13449/) (必須)
+- **Software**: Spigot / Paper 1.21.x or higher
+- **Dependency**: [NuVotifier](https://www.spigotmc.org/resources/nuvotifier.13449/) (Required)
 
-## ⚙️ 設定ファイル (config.yml)
+## ⚙️ Configuration (config.yml)
 
 ```yaml
-# 日付の表示形式
-date-format: "yyyy-MM-dd HH:mm:ss"
+# ==========================================
+# VotifierListener Config by tash087
+# ==========================================
 
-# ログファイルへの書き出し形式
-# 使用可能な変数: %time%, %player%, %service%, %ip%
-log-format: "[%time%] %player% - %service% (IP: %ip%)"
-
-# 保存するファイル名
+# ログファイルの名称
 log-file-name: "vote.log"
 
-# コンソールに記録を表示するか
+# ログの記録形式
+# 利用可能変数: %time%, %player%, %service%, %ip%
+log-format: "[%time%] PLAYER: %player% | SERVICE: %service% | IP: %ip%"
+
+# コンソールにもログを表示するか
 console-log: true
 
+# 日付の表示形式
+date-format: "yyyy-MM-dd HH:mm:ss"
 ```
 
-## 📝 技術仕様 (Technical Overview)
+---
 
-* **Event Priority**: MONITOR
-他のプラグインが投票イベントをキャンセルしていないかを確認した上で、最終的な結果を記録します。
+## 📝 Technical Overview
+
+* **Event Priority**: `MONITOR`
+The plugin monitors events at the final stage to ensure it records the definitive vote status after other plugins have processed or cancelled the event.
 * **Internal Processing**:
-Javaの FileWriter と PrintWriter を使用し、追記モードで効率的にファイルへの書き込みを行います。
+Uses Java's `FileWriter` and `PrintWriter` in append mode for efficient and safe file writing.
 * **Placeholders**:
-以下の変数が log-format 内で使用可能です。
-* %time% : 投票時刻
-* %player% : プレイヤー名
-* %service% : 投票サイト名
-* %ip% : プレイヤーのIPアドレス
+The following variables can be used within the `log-format`:
+* `%time%`: Time of the vote
+* `%player%`: Player's username
+* `%service%`: Voting site/service name
+* `%ip%`: Player's IP address
 
 
 
-## 📄 ライセンス (License)
+---
+
+## 📄 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Copyright (c) 2026 tash087
+
 ---
-Developed by tash087
+
+Developed by **tash087**
+
+
+```
