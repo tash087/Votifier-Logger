@@ -4,7 +4,7 @@
 [![Platform](https://img.shields.io/badge/Platform-Spigot%20%7C%20Paper-gold.svg)](https://papermc.io/)
 [![Minecraft Version](https://img.shields.io/badge/Minecraft-1.21.4-blue.svg)](https://www.minecraft.net/)
 
-**Votifier-Logger** は、Minecraftサーバーへの投票（NuVotifier経由）を詳細に記録し、管理業務を効率化するための軽量なロギングプラグインです。
+**Votifier-Logger** は、Minecraftサーバーへの投票（NuVotifier経由）を詳細に記録し、管理業務を効率化するための軽量なプラグインです。
 
 ---
 
